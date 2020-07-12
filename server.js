@@ -3,7 +3,10 @@
 const mysql = require("mysql");
 // const cTable = require('console.table');
 const inquirer = require('inquirer');
-// const connection = require('./connection')
+// const CustomLogging = require ('./customLogging')
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< 
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< 
+
 const connection = mysql.createConnection({
   host: "localhost",
 
@@ -26,9 +29,10 @@ function start() {
   inquirer
     .prompt([{
       type: "list",
-      message: "What would you like to do?",
+    
+      message: "  *************** WHAT WOULD YOU LIKE TO DO? *****************",
       name: "start",
-      choices: [
+      choices: [ 
         "Add Employee",
         "View all Employees",
         "Remove Employee",
@@ -104,25 +108,30 @@ function addEmployee() {
       {
         type: "input",
         message: "Who is their manager?",
-        name: "manager_id"
+        name: "manager_id",
+        choices: ["MatKenny", "Donald Tiny", "Trump Caty"]
       }
     ])
     .then(function (res) {
       connection.query(
         "INSERT INTO employees SET ?",
         res,
-        function (err, res) {
-          if (err) throw err;
-          custom.setBodyStyle({ color: 'red' });
-        //   console.log(  "********************************************\n"  );
-            custom.log('\n >>>>>>>>>>>>Employee Added!.<<<<<<<<<<<<<\n');
-        //   console.log(  "********************************************\n"  );
+        function(err, res) {
+            if (err) throw err;
+            // console.log( "Employee added!\n");
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+            // const custom = new customLogging;
+
+            console.log( "Employee added!\n");
 
           start();
         }
       );
     })
-}
+}          
+
 
 function viewAllEmployees() {
 
@@ -282,3 +291,5 @@ function(err,res){
 }
 )
 }
+
+

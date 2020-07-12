@@ -10,6 +10,8 @@ This application requires MySQL (run "npm install mysql" in your terminal), and 
 
 ## Usage
 
+![Database Schema](Assets/SQLNodeJS.mkv)
+
 After installing MySQL and Inquirer, run the server.js file from the command line of your terminal. This will bring up a set of questions asking you what you would like to do to the database holding your employees. You are given the option to view, delete, or update existing information about employees. Once you are done making changes, you can end the application and the connection to your database will be ended.
 License
 
