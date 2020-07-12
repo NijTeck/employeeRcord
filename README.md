@@ -5,6 +5,8 @@ Navigate to  Asset folder to view the video.
 
 A simple CMD application that allow user to  access data from the SQL server using NODE and also, the user can mainpulate the data by deleting from the record, updating the record or just viewing the record,. 
 
+## Deployment Link
+https://obscure-everglades-16461.herokuapp.com/
 
 ## Installation
 
